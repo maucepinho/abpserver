@@ -5,13 +5,22 @@ dotenv.config();
 
 // Configura o pool de conexão, passando um objeto de configuração 
 // contendo as informações necessárias para se conectar ao BD do PostgreSQL
-const pool = new Pool({
+/*const pool = new Pool({
   user: process.env.BDUSUARIO,
   host: process.env.BDHOST,
   database: process.env.BDNOME,
   password: process.env.BDSENHA,
   port: process.env.BDPORTA
 });
+*/
+const pool = new Pool({
+  connectionString: process.env.BDURI,
+  ssl: {
+    // Ajuste necessário caso esteja utilizando SSL e seu ambiente requeira essa configuração
+    rejectUnauthorized: false,
+  },
+})
+
 
 // Exporta a variável pool
 module.exports = { pool };
