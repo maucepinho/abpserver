@@ -1,9 +1,9 @@
 // Importa o pacote pg e desestrutura a propriedade Pool
-const {Pool} = require("pg");
-const dotenv = require("dotenv");
-dotenv.config();
+const { Pool } = require('pg')
+const dotenv = require('dotenv')
+dotenv.config()
 
-// Configura o pool de conexão, passando um objeto de configuração 
+// Configura o pool de conexão, passando um objeto de configuração
 // contendo as informações necessárias para se conectar ao BD do PostgreSQL
 /*const pool = new Pool({
   user: process.env.BDUSUARIO,
@@ -21,10 +21,8 @@ const pool = new Pool({
   },
 })
 
-
 // Exporta a variável pool
-module.exports = { pool };
-
+module.exports = { pool }
 
 /*
 Comandos para crias as tabelas tbusuario e tbquestao:
